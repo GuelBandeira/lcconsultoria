@@ -7,6 +7,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 nav {
   z-index: 999;
   position: absolute;
@@ -38,7 +43,7 @@ nav .navigation {
 
 .nav-links {
   position: relative;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
   text-decoration: none;
   margin-left: 30px;
@@ -101,6 +106,7 @@ video {
   transition: 1s opacity;
 }
 .imagem {
+  top: 1250px;
   position: absolute;
   z-index: -1;
 }
@@ -197,7 +203,7 @@ video {
 }
 
 .slider-navigation .nav-btn.active {
-  background: #12f779;
+  background: #008134;
 }
 
 .slider-navigation .nav-btn:not(:last-child) {
@@ -279,13 +285,31 @@ video {
     transition: 0.3s ease;
   }
 
-  .menu-btn.active {
+  .menu-btn .active {
     z-index: 999;
     background: url(close.png) no-repeat;
     background-size: 25px;
     background-position: center;
     transition: 0.3s ease;
   }
+}
+
+.menu-btn2 .active2 {
+  z-index: 999;
+  background: url(close.png) no-repeat;
+  background-size: 25px;
+  background-position: center;
+  transition: 0.3s ease;
+}
+
+.menu-btn {
+  background: url(menu.png) no-repeat;
+  background-size: 30px;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 @media (max-width: 560px) {
@@ -344,11 +368,7 @@ video {
   width: 60px;
   height: 15px;
   margin-bottom: 20px;
-  background: linear-gradient(
-    90deg,
-    rgb(63, 251, 126) 0%,
-    rgb(143, 255, 109) 100%
-  );
+  background: linear-gradient(90deg, #00ce7c 0%, #008134 100%);
 }
 
 nav {
@@ -367,7 +387,8 @@ nav {
 }
 
 .card:hover {
-  background-color: #2b483a;
+  background-color: #008134;
+  transform: scale(1.025); /* Equal to scaleX(0.7) scaleY(0.7) */
   transition: 0.5s all;
   box-shadow: 0 10px 15px -3px rgba(1, 116, 6, 0.1),
     0 4px 6px -4px rgba(0, 248, 0, 0.1);
@@ -388,35 +409,315 @@ nav {
     padding-top: 20px;
     padding: 20px 180px;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.72);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.8px);
-    -webkit-backdrop-filter: blur(7.8px);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 }
 
 @media (max-width: 1024px) {
   .navbar-default {
     padding-top: 20px;
-    color: black !important;
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.72);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.8px);
-    -webkit-backdrop-filter: blur(7.8px);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .folhas01 {
+    display: none;
+  }
+  .folhas02 {
+    display: none;
   }
 }
 
 .folhas02 {
-  right: 0;
-  top: 820px;
+  right: -120px;
+  top: 1000px;
+  z-index: 99;
   position: absolute;
 }
 
-.folhas0 {
+.folhas01 {
+  position: absolute;
+  left: -400px;
+  top: 2200px;
+  z-index: 99;
+  transform: rotate(90deg);
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: 5px; /*thin;*/
+  scrollbar-color: #008134 white;
+}
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white; /* color of the tracking area */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #008134; /* color of the scroll thumb */
+  border-radius: 1px; /* roundness of the scroll thumb */
+  /* border: 1px solid white;  */ /* creates padding around scroll thumb */
+}
+.parallax {
+  position: relative;
+  background-image: url(assets/img/parallax.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.parallax::before {
+  content: "";
   position: absolute;
   left: 0;
-  top: 50px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #008134;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.parallax-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.parallax-paragraph {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+
+/* 
+.parallax {
+  background-color: rgba(54, 167, 26, 0.7);
+  z-index: 99;
+  background-image: url(assets/img/parallax.jpg);
+
+  height: 100%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+@import url();
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+.test {
+  width: 180px;
+  height: 50px;
+  margin: auto;
+  border-radius: 6px 22px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  text-align: center;
+  color: rgb(236, 240, 241);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+.test:hover {
+  border-radius: 22px 6px;
+  background: rgb(46, 204, 113);
+  cursor: pointer;
+}
+
+.arvore {
+  background: rgb(39, 174, 96);
+}
+
+.arvore:hover {
+  background: rgb(46, 204, 113);
+}
+
+.sc-border-left::after {
+  right: inherit;
+  width: 10%;
+}
+.appointment .appoint-wrap .sc-title-two h2,
+.appointment .appoint-wrap .sc-title-two h4,
+.appointment .appoint-wrap .sc-title-two h5,
+.appointment .appoint-wrap .sc-title-two-white h2,
+.appointment .appoint-wrap .sc-title-two-white h4,
+.appointment .appoint-wrap .sc-title-two-white h5 {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .sc-title-two,
+  .sc-title-two-white {
+    width: 100%;
+    text-align: center;
+  }
+}
+.appointment .checkup-img img {
+  border: 4px solid #fff;
+}
+.appoint-info i {
+  font-size: 3.5rem;
+  color: #fff;
+  border-radius: 50px;
+  width: 95px;
+  height: 95px;
+  background: linear-gradient(90deg, #00ce7c 0%, #008134 100%);
+  text-align: center;
+  padding: 15px;
+}
+
+.sc-bg-right::before,
+.sc-bg-left::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 70%;
+  height: 100%;
+  background-color: #008134;
+  z-index: -1;
+}
+
+.sc-bg-right.bg-w-50::before,
+.sc-bg-left.bg-w-50::before {
+  width: 50%;
+}
+
+.sc-bg-right::before {
+  right: 0;
+}
+
+.sc-bg-left::before {
+  left: 0;
+}
+
+@media (max-width: 991px) {
+  .sc-bg-right::before,
+  .sc-bg-left::before {
+    width: 100% !important;
+  }
+}
+
+.appointment .checkup-img img {
+  border: 4px solid #fff;
+}
+
+@media (max-width: 991px) {
+  .appointment .appoint-wrap {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .appoint-form {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem;
+  }
+  .appoint-detail {
+    text-align: center;
+  }
+  .partners {
+    text-align: center;
+  }
+}
+
+.sc-title-two,
+.sc-title-two-white {
+  position: relative;
+  width: 50%;
+  margin: 0 auto 90px;
+}
+
+.sc-title-two h4,
+.sc-title-two h2,
+.sc-title-two-white h4,
+.sc-title-two-white h2 {
+  margin-bottom: 10px;
+}
+.section {
+  padding: 100px 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.emergency-call .sc-title-two-white::after {
+  width: 10%;
+  bottom: -30px;
+  height: 2px;
+}
+
+.faq-pg .appoint-info h2,
+.faq-pg .appoint-info h3 {
+  margin-bottom: 5px;
+}
+
+.faq-pg .appoint-info::after {
+  bottom: -15px;
+}
+
+@media (max-width: 991px) {
+  .bg-md-white {
+    background: #fff !important;
+  }
+  .mb-xs-0 {
+    margin-bottom: 0 !important;
+  }
+  .mt-xs-3 {
+    margin-top: 1.5rem !important;
+  }
+  .mt-xs-4 {
+    margin-top: 2rem !important;
+  }
+  .mb-xs-3 {
+    margin-bottom: 1.5rem !important;
+  }
+  .mb-xs-4 {
+    margin-bottom: 2rem !important;
+  }
+  .flex-mxl-column-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+@media (min-width: 991px) {
+  .p-lg-0 {
+    padding: 0 !important;
+  }
+  .pr-lg-0 {
+    padding-right: 0 !important;
+  }
+  .pl-lg-0 {
+    padding-left: 0 !important;
+  }
+  .pr-lg-5 {
+    padding-right: 2.5rem !important;
+  }
+  .w-lg-75 {
+    width: 75% !important;
+  }
+  .w-lg-50 {
+    width: 50% !important;
+  }
+  .border-lg-0 {
+    border: none !important;
+  }
+}
+
+.imagem {
+  max-width: 100%;
 }
