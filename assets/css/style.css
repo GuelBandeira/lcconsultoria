@@ -5,3 +5,21 @@
   margin-bottom: 20px;
   background: linear-gradient(90deg, #89cb83 0%, #00e676 100%);
 }
+
+#brands-1 {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+#brands-1 p.p-xl {
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+#brands-1 .brand-logo {
+  padding: 0 15px;
+}
+
+#brands-1 .owl-dots {
+  display: none;
+}
